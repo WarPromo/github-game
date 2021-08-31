@@ -5,7 +5,8 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public float acceleration;
+    public float maxspeed;
     
 
     void Start()
@@ -17,6 +18,9 @@ public class movement : MonoBehaviour
     void Update()
     {
         Vector2 v = new Vector2(0, 0);
+        Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
+        Vector2 newVelocity = new Vector2(0, 0);
+
         if (Input.GetKey(KeyCode.A))
         {
             v.x += -1;
@@ -25,7 +29,26 @@ public class movement : MonoBehaviour
         {
             v.x += 1;
         }
-        print(v);
-        GetComponent<Rigidbody2D>().velocity = v;
+        if (Input.GetKey(KeyCode.W))
+        {
+            v.y += 1;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            v.y += -1;
+        }
+
+      
+
+
+        float dx = velocity.x + ((maxspeed * v.x) - velocity.x) * acceleration;
+        float dy = velocity.y + ((maxspeed * v.y) - velocity.y) * acceleration;
+
+        print(dx);
+
+        newVelocity.x = dx;
+        newVelocity.y = dy;
+
+        GetComponent<Rigidbody2D>().velocity = newVelocity;
     }
 }
