@@ -8,7 +8,8 @@ public class movement : MonoBehaviour
     public float acceleration;
     public float maxspeed;
 
-    public bool canjump = false;
+    bool canjump = false;
+    public float jumpheight;
     
 
     void Start()
@@ -31,27 +32,23 @@ public class movement : MonoBehaviour
         {
             v.x += 1;
         }
-        if (Input.GetKey(KeyCode.W))
+
+        if(canjump && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
         {
-            v.y += 1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            v.y += -1;
+            print("Jumped");
+            newVelocity.y = jumpheight;
         }
 
       
 
 
         float dx = velocity.x + ((maxspeed * v.x) - velocity.x) * acceleration;
-        //float dy = velocity.y + ((maxspeed * v.y) - velocity.y) * acceleration;
 
         newVelocity.x = dx;
         //newVelocity.y = dy;
 
         GetComponent<Rigidbody2D>().velocity = newVelocity;
 
-        canjump = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -59,6 +56,14 @@ public class movement : MonoBehaviour
         if(collision.gameObject.tag == "ground")
         {
             canjump = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "ground")
+        {
+            canjump = false;
         }
     }
 }

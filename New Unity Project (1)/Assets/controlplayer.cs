@@ -36,7 +36,7 @@ public class controlplayer : MonoBehaviour
 
         if (cooldown > 0) cooldown -= 0;
 
-        Vector2 ang = player.transform.position - transform.position;
+        Vector2 ang = new Vector3( player.transform.position.x, player.transform.position.y + 1, player.transform.position.z ) - transform.position;
 
         float angle = Mathf.Atan2(ang.y, ang.x)* 180 / Mathf.PI;
 
