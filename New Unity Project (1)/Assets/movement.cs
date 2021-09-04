@@ -19,7 +19,7 @@ public class movement : MonoBehaviour
     {
         Vector2 v = new Vector2(0, 0);
         Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
-        Vector2 newVelocity = new Vector2(0, 0);
+        Vector2 newVelocity = new Vector2(0, velocity.y);
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -42,12 +42,10 @@ public class movement : MonoBehaviour
 
 
         float dx = velocity.x + ((maxspeed * v.x) - velocity.x) * acceleration;
-        float dy = velocity.y + ((maxspeed * v.y) - velocity.y) * acceleration;
-
-        print(dx);
+        //float dy = velocity.y + ((maxspeed * v.y) - velocity.y) * acceleration;
 
         newVelocity.x = dx;
-        newVelocity.y = dy;
+        //newVelocity.y = dy;
 
         GetComponent<Rigidbody2D>().velocity = newVelocity;
     }
