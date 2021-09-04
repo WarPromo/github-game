@@ -7,6 +7,8 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
     public float acceleration;
     public float maxspeed;
+
+    public bool canjump = false;
     
 
     void Start()
@@ -48,5 +50,15 @@ public class movement : MonoBehaviour
         //newVelocity.y = dy;
 
         GetComponent<Rigidbody2D>().velocity = newVelocity;
+
+        canjump = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "ground")
+        {
+            canjump = true;
+        }
     }
 }
