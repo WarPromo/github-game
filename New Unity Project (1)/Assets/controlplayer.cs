@@ -60,7 +60,7 @@ public class controlplayer : MonoBehaviour
 
         if(directionAngle != null) directionAngle = null;
 
-        if (enables == 3)
+        if (enables == 1)
         {
             isenabled = true;
         }

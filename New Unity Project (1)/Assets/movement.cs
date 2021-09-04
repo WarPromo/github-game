@@ -20,6 +20,8 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         Vector2 v = new Vector2(0, 0);
         Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
         Vector2 newVelocity = new Vector2(0, velocity.y);
