@@ -22,6 +22,10 @@ public class movement : MonoBehaviour
     {
 
 
+        Vector2 cameraDist = -Camera.main.transform.position + transform.position;
+        Camera.main.GetComponent<Rigidbody2D>().velocity = cameraDist * 10;
+
+
         Vector2 v = new Vector2(0, 0);
         Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
         Vector2 newVelocity = new Vector2(0, velocity.y);
