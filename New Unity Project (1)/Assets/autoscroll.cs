@@ -20,6 +20,7 @@ public class autoscroll : MonoBehaviour
         {
             Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
             velocity.x = scrollSpeed;
+            print(velocity);
             GetComponent<Rigidbody2D>().velocity = velocity;
         
         }

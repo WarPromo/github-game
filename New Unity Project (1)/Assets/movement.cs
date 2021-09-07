@@ -35,7 +35,7 @@ public class movement : MonoBehaviour
         else
         {
             cvelocity.y = cameraDist.y * 10;
-            cvelocity.x = 0;
+          
         }
         
 
