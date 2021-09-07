@@ -5,10 +5,12 @@ using UnityEngine;
 public class scrollbutton : MonoBehaviour
 {
     bool buttonpressed = false;
+    AudioSource audioData;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioData = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -22,13 +24,21 @@ public class scrollbutton : MonoBehaviour
         print("collision");
         if(collision.gameObject.tag == "Player")
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1);
         }
         if(collision.gameObject.tag == "buttonactivator")
         {
             print("START AUTO SCROLL");
             buttonpressed = true;
-            Camera.main.GetComponent<autoscroll>().autoScroll = true;
+            StartCoroutine(startScroll());
         }
+    }
+
+    IEnumerator startScroll()
+    {
+        audioData.Play(0);
+        yield return new WaitForSeconds(1);
+        Camera.main.GetComponent<autoscroll>().autoScroll = true;
+        
     }
 }
