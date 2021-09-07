@@ -18,7 +18,10 @@ public class autoscroll : MonoBehaviour
     {
         if (autoScroll)
         {
-            transform.Translate(scrollSpeed, 0, 0);
+            Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
+            velocity.x = scrollSpeed;
+            GetComponent<Rigidbody2D>().velocity = velocity;
+        
         }
     }
 }
