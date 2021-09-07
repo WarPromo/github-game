@@ -788,7 +788,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoScroll: 0
-  scrollSpeed: 7
+  doScroll: 0
+  scrollSpeed: 5.8
 --- !u!1 &623123387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,6 +1373,7 @@ MonoBehaviour:
   acceleration: 0.008
   maxspeed: 10
   jumpheight: 15
+  outrunPoint: 1
 --- !u!61 &1242278547
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -43,6 +43,7 @@ public class scrollbutton : MonoBehaviour
         wall.tag = "ground";
         yield return new WaitForSeconds(1);
         Camera.main.GetComponent<autoscroll>().autoScroll = true;
-        
+        Camera.main.GetComponent<autoscroll>().doScroll = true;
+
     }
 }

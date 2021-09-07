@@ -5,6 +5,7 @@ using UnityEngine;
 public class autoscroll : MonoBehaviour
 {
     public bool autoScroll = false;
+    public bool doScroll = false;
 
     public float scrollSpeed;
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class autoscroll : MonoBehaviour
         if (autoScroll)
         {
             Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
-            velocity.x = scrollSpeed;
+            velocity.x = velocity.x +  (scrollSpeed - velocity.x) * 0.01f;
             print(velocity);
             GetComponent<Rigidbody2D>().velocity = velocity;
         
