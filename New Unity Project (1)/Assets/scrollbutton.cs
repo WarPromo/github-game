@@ -41,6 +41,7 @@ public class scrollbutton : MonoBehaviour
 
         wall.AddComponent<Rigidbody2D>();
         wall.tag = "ground";
+        wall.GetComponent<Rigidbody2D>().AddForce(new Vector2(80, 500));
         yield return new WaitForSeconds(1);
         Camera.main.GetComponent<autoscroll>().autoScroll = true;
         Camera.main.GetComponent<autoscroll>().doScroll = true;
