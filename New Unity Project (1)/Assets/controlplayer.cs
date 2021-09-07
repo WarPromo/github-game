@@ -83,7 +83,7 @@ public class controlplayer : MonoBehaviour
         Vector3 dpos = new Vector3(worldPosition.x, worldPosition.y) - pos;
 
 
-
+    
 
         float d = dpos.magnitude;
 

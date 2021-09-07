@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class autoscroll : MonoBehaviour
+public class Autoscroll : MonoBehaviour
 {
-
-
-
-    public bool autoScroll = true;
-
     // Start is called before the first frame update
+
+    public bool autoScroll;
     void Start()
     {
         
@@ -18,6 +15,8 @@ public class autoscroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(autoScroll == true){
+            transform.Translate(1,0,0);
+        }
     }
 }
