@@ -43,8 +43,6 @@ public class rainb : MonoBehaviour
 
         c[b] += Time.deltaTime * m;
 
-        print(c[0] + " " + c[1] + " " + c[2]);
-
 
 
         renderer.color = new Color(c[0], c[1], c[2]);

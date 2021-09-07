@@ -6,6 +6,10 @@ TagManager:
   tags:
   - ground
   - buttonactivator
+  - throwable
+  - inverser
+  - sword
+  - swordtriggerer
   layers:
   - Default
   - TransparentFX
