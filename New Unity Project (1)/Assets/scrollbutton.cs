@@ -5,6 +5,7 @@ using UnityEngine;
 public class scrollbutton : MonoBehaviour
 {
     bool buttonpressed = false;
+    public GameObject wall;
     AudioSource audioData;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,9 @@ public class scrollbutton : MonoBehaviour
     IEnumerator startScroll()
     {
         audioData.Play(0);
+
+        wall.AddComponent<Rigidbody2D>();
+        wall.tag = "ground";
         yield return new WaitForSeconds(1);
         Camera.main.GetComponent<autoscroll>().autoScroll = true;
         
