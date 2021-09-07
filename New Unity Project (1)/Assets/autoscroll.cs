@@ -5,6 +5,8 @@ using UnityEngine;
 public class autoscroll : MonoBehaviour
 {
     public bool autoScroll = false;
+
+    public float scrollSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class autoscroll : MonoBehaviour
     {
         if (autoScroll)
         {
-            transform.Translate(1, 0, 0);
+            transform.Translate(scrollSpeed, 0, 0);
         }
     }
 }
