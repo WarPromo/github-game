@@ -25,7 +25,10 @@ public class movement : MonoBehaviour
         Vector2 cameraDist = -Camera.main.transform.position + transform.position;
         Vector2 cvelocity = Camera.main.GetComponent<Rigidbody2D>().velocity;
 
-        if(Camera.main.GetComponent<Autoscroll>().autoScroll == false)
+        
+
+        /*
+        if(Camera.main.GetComponent<autoscroll>().autoScroll == false)
         {
             cvelocity = cameraDist * 10;
         }
@@ -33,7 +36,7 @@ public class movement : MonoBehaviour
         {
             cvelocity.y = cameraDist.y * 10;
         }
-
+        */
 
         Camera.main.GetComponent<Rigidbody2D>().velocity = cvelocity;
 

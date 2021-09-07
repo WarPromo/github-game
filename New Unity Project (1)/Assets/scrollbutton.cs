@@ -28,7 +28,7 @@ public class scrollbutton : MonoBehaviour
         {
             print("START AUTO SCROLL");
             buttonpressed = true;
-            Camera.main.GetComponent<Autoscroll>().autoScroll = true;
+            Camera.main.GetComponent<autoscroll>().autoScroll = true;
         }
     }
 }
