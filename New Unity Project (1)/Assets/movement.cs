@@ -28,31 +28,7 @@ public class movement : MonoBehaviour
         Vector2 cvelocity = Camera.main.GetComponent<Rigidbody2D>().velocity;
         Vector2 cvelocity2 = cvelocity;
 
-        if (Camera.main.GetComponent<autoscroll>().doScroll)
-        {
-            Camera.main.GetComponent<autoscroll>().autoScroll = !(cameraDist.x > outrunPoint);
-        }
-        
-
-
-
-        if (Camera.main.GetComponent<autoscroll>().autoScroll == false && !Camera.main.GetComponent<autoscroll>().doScroll)
-        {
-            cvelocity = cameraDist * 10;
-        }
-        else if (Camera.main.GetComponent<autoscroll>().doScroll && !Camera.main.GetComponent<autoscroll>().autoScroll)
-        {
-            cvelocity.y = cameraDist.y * 10;
-            cvelocity.x = cvelocity.x + ( (maxspeed*1.5f) - cvelocity.x)*0.01f;
-        }
-        else
-        {
-            cvelocity.y = cameraDist.y * 10;
-          
-        }
-        
-
-        Camera.main.GetComponent<Rigidbody2D>().velocity = cvelocity;
+        Camera.main.GetComponent<Rigidbody2D>().velocity = cameraDist * 10;
 
 
         Vector2 v = new Vector2(0, 0);

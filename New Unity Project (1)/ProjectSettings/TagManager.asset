@@ -10,6 +10,7 @@ TagManager:
   - inverser
   - sword
   - swordtriggerer
+  - scrolldeath
   layers:
   - Default
   - TransparentFX

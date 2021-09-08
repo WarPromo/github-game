@@ -17,12 +17,6 @@ public class autoscroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (autoScroll)
-        {
-            Vector3 velocity = GetComponent<Rigidbody2D>().velocity;
-            velocity.x = velocity.x +  (scrollSpeed - velocity.x) * 0.01f;
-            GetComponent<Rigidbody2D>().velocity = velocity;
-        
-        }
+
     }
 }
