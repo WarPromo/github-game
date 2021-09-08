@@ -11,6 +11,7 @@ TagManager:
   - sword
   - swordtriggerer
   - scrolldeath
+  - talker
   layers:
   - Default
   - TransparentFX

@@ -56,6 +56,8 @@ public class controlplayer : MonoBehaviour
         else
         {
 
+            player.GetComponent<movement>().mySword = gameObject;
+
             if (cooldown > 0) cooldown -= 0;
 
             Vector2 ang = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z) - transform.position;
