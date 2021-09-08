@@ -39,6 +39,7 @@ public class scrollbutton : MonoBehaviour
     IEnumerator startScroll()
     {
 
+
         audioData.Play(0);
 
         wall.AddComponent<Rigidbody2D>();
