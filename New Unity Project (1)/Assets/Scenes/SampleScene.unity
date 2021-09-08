@@ -2012,7 +2012,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2023,7 +2023,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: test
 --- !u!222 &1140900257
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3731,7 +3731,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 57034fc9094e487468dfdb9b48e514ab, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3772,7 +3772,7 @@ MonoBehaviour:
   - talk to me
   - wazzup
   - do you know who /njoe mama is
-  - 'THEY"RE JOE BROTHA '
+  - 'THEY''RE /nJOE BROTHA '
   - k bye
   finishedTalking: 0
   zoomAmount: 4
