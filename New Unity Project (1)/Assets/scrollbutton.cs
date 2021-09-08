@@ -46,12 +46,6 @@ public class scrollbutton : MonoBehaviour
         wall.tag = "ground";
         wall.GetComponent<Rigidbody2D>().AddForce(new Vector2(80, 500));
         yield return new WaitForSeconds(1);
-
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        player.GetComponent<Checkpoint>().respawnScroll = scrollSpeed;
-        player.GetComponent<Checkpoint>().scrollSpeed = scrollSpeed;
-
         
 
 
