@@ -27,6 +27,8 @@ public class controlplayer : MonoBehaviour
 
     GameObject copyThrow = null;
 
+    bool followPlayer = true;
+
 
 
 
@@ -42,10 +44,14 @@ public class controlplayer : MonoBehaviour
 
 
 
-        if (throwing)
+        if (!followPlayer)
         {
-            
-            if(!GetComponent<Rigidbody2D>().isKinematic) GetComponent<Rigidbody2D>().velocity = throwVelocity;
+
+            if (!GetComponent<Rigidbody2D>().isKinematic && throwing)
+            {
+                GetComponent<Collider2D>().isTrigger = false;
+                GetComponent<Rigidbody2D>().velocity = throwVelocity;
+            }
         }
         else
         {
@@ -83,7 +89,7 @@ public class controlplayer : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButton(0) && throwing == false)
+        if (Input.GetMouseButton(0) && ( throwing == false && followPlayer == true ))
         {
 
 
@@ -99,6 +105,7 @@ public class controlplayer : MonoBehaviour
 
 
             throwing = true;
+            followPlayer = false;
 
             StartCoroutine(makeCopy());
 
@@ -115,9 +122,11 @@ public class controlplayer : MonoBehaviour
         copyThrow = Instantiate(gameObject);
 
         copyThrow.GetComponent<Rigidbody2D>().isKinematic = false;
+        copyThrow.GetComponent<Collider2D>().isTrigger = true;
         copyThrow.GetComponent<controlplayer>().throwing = false;
         copyThrow.GetComponent<controlplayer>().enables = 1;
         copyThrow.transform.position = transform.position + new Vector3(GetTarget().x, GetTarget().y, 0 ) ;
+
 
 
 
@@ -150,6 +159,39 @@ public class controlplayer : MonoBehaviour
         Vector2 target = (player.transform.position + dpos) - transform.position;
 
         return target;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+
+
+        if (GetComponent<controlplayer>().throwing && collision.gameObject.tag != "swordtriggerer")
+        {
+
+            print("HIT SOMETHING!!!!!!");
+
+            GameObject inverser = Instantiate(GameObject.FindGameObjectWithTag("inverser"));
+            inverser.tag = "Untagged";
+            Vector3 parentTrans = collision.gameObject.transform.localScale;
+
+            GetComponent<Rigidbody2D>().isKinematic = true;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            GetComponent<controlplayer>().throwing = false;
+
+            inverser.transform.SetParent(collision.gameObject.transform);
+            inverser.transform.localScale = new Vector3(1 / parentTrans.x, 1 / parentTrans.y, 1 / parentTrans.z);
+
+
+
+
+            inverser.transform.Rotate(0, 0, collision.gameObject.transform.eulerAngles.z);
+
+            transform.SetParent(inverser.transform);
+
+
+
+
+        }
     }
 
 }
