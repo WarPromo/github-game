@@ -8,7 +8,6 @@ public class talk : MonoBehaviour
 
     bool talking = false;
     GameObject talker = null;
-    bool original = false;
 
     void Start()
     {
@@ -28,7 +27,7 @@ public class talk : MonoBehaviour
                     GetComponent<movement>().canmove = true;
                     GetComponent<movement>().focus = gameObject;
                     GetComponent<movement>().zoom = 6;
-                    GetComponent<movement>().mySword.GetComponent<controlplayer>().enabled = original;
+                    GetComponent<movement>().mySword.GetComponent<controlplayer>().enabled = true;
                     
                     talker.GetComponent<chat>().finishedTalking = false;
                     talker = null;
@@ -61,12 +60,8 @@ public class talk : MonoBehaviour
                         GetComponent<movement>().canmove = false;
                         GetComponent<movement>().focus = talker;
                         GetComponent<movement>().zoom = talker.GetComponent<chat>().zoomAmount;
-                        original = GetComponent<movement>().mySword.GetComponent<controlplayer>().enabled;
                         GetComponent<movement>().mySword.GetComponent<controlplayer>().enabled = false;
                         GetComponent<movement>().mySword.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-                        
-
-
 
                     }
                 }
