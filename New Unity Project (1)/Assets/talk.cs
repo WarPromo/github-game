@@ -8,6 +8,7 @@ public class talk : MonoBehaviour
 
     bool talking = false;
     GameObject talker = null;
+    bool original = false;
 
     void Start()
     {
@@ -27,7 +28,7 @@ public class talk : MonoBehaviour
                     GetComponent<movement>().canmove = true;
                     GetComponent<movement>().focus = gameObject;
                     GetComponent<movement>().zoom = 6;
-                    GetComponent<movement>().mySword.GetComponent<controlplayer>().enabled = true;
+                    GetComponent<movement>().mySword.GetComponent<controlplayer>().enabled = original;
                     
                     talker.GetComponent<chat>().finishedTalking = false;
                     talker = null;
@@ -40,24 +41,39 @@ public class talk : MonoBehaviour
                 Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
 
-                Collider2D overlaps = Physics2D.OverlapPoint(worldPosition);
+                List<Collider2D> overlaps = new List<Collider2D>();
+                ContactFilter2D filter = new ContactFilter2D();
+                filter.NoFilter();
+
+                Physics2D.OverlapPoint(worldPosition, filter, overlaps);
 
 
-                print(overlaps);
-
-                if (overlaps != null && overlaps.gameObject.tag == "talker")
+                foreach(Collider2D overlap in overlaps)
                 {
-                    talker = overlaps.gameObject;
-                    talking = true;
-                    overlaps.gameObject.GetComponent<chat>().interact();
+                    print(overlap);
 
-                    GetComponent<movement>().canmove = false;
-                    GetComponent<movement>().focus = talker;
-                    GetComponent<movement>().zoom = talker.GetComponent<chat>().zoomAmount;
-                    GetComponent<movement>().mySword.GetComponent<controlplayer>().enabled = false;
-                    GetComponent<movement>().mySword.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                    if (overlaps != null && overlap.gameObject.tag == "talker")
+                    {
+                        talker = overlap.gameObject;
+                        talking = true;
+                        overlap.gameObject.GetComponent<chat>().interact();
 
+                        GetComponent<movement>().canmove = false;
+                        GetComponent<movement>().focus = talker;
+                        GetComponent<movement>().zoom = talker.GetComponent<chat>().zoomAmount;
+                        original = GetComponent<movement>().mySword.GetComponent<controlplayer>().enabled;
+                        GetComponent<movement>().mySword.GetComponent<controlplayer>().enabled = false;
+                        GetComponent<movement>().mySword.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                        
+
+
+
+                    }
                 }
+
+
+
+
             }
 
 
