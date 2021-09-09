@@ -31,6 +31,7 @@ public class collision : MonoBehaviour
     {
         print("TRIGGER! ");
 
+        if (collision.gameObject.GetComponent<nocollide>() != null) return;
         if (collision.gameObject == pickedup) return;
 
         parent.GetComponent<controlplayer>().directionAngle = angle;
@@ -39,6 +40,7 @@ public class collision : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.gameObject.GetComponent<nocollide>() != null) return;
         if (collision.gameObject == pickedup) return;
         print("EXITED TRIGGER! ");
         parent.GetComponent<controlplayer>().enables += 1;

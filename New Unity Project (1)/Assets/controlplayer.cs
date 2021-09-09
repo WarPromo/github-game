@@ -121,37 +121,5 @@ public class controlplayer : MonoBehaviour
         return target;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-
-
-        if (GetComponent<controlplayer>().throwing && collision.gameObject.tag != "swordtriggerer")
-        {
-
-            print("HIT SOMETHING!!!!!!");
-
-            GameObject inverser = Instantiate(GameObject.FindGameObjectWithTag("inverser"));
-            inverser.tag = "Untagged";
-            Vector3 parentTrans = collision.gameObject.transform.localScale;
-
-            GetComponent<Rigidbody2D>().isKinematic = true;
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            GetComponent<controlplayer>().throwing = false;
-
-            inverser.transform.SetParent(collision.gameObject.transform);
-            inverser.transform.localScale = new Vector3(1 / parentTrans.x, 1 / parentTrans.y, 1 / parentTrans.z);
-
-
-
-
-            inverser.transform.Rotate(0, 0, collision.gameObject.transform.eulerAngles.z);
-
-            transform.SetParent(inverser.transform);
-
-
-
-
-        }
-    }
 
 }
