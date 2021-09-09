@@ -41,77 +41,35 @@ public class controlplayer : MonoBehaviour
     void Update()
     {
 
+        if (cooldown > 0) cooldown -= 0;
 
+        Vector2 ang = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z) - transform.position;
 
+        float angle = Mathf.Atan2(ang.y, ang.x) * 180 / Mathf.PI;
 
-        if (!followPlayer)
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        GetComponent<Rigidbody2D>().velocity = moveSpeed * GetTarget();
+
+        if (directionAngle != null && isenabled && cooldown == 0)
         {
+            double radians = ((float)directionAngle + angle) * Mathf.PI / 180;
+            double x = Mathf.Cos((float)radians);
+            double y = Mathf.Sin((float)radians);
 
-            if (!GetComponent<Rigidbody2D>().isKinematic && throwing)
-            {
-                GetComponent<Collider2D>().isTrigger = false;
-                GetComponent<Rigidbody2D>().velocity = throwVelocity;
-            }
-        }
-        else
-        {
+            Vector2 v = new Vector2((float)x, (float)y) * 20;
+            player.GetComponent<Rigidbody2D>().velocity = v;
 
-            player.GetComponent<movement>().mySword = gameObject;
+            cooldown = cooldownLength;
 
-            if (cooldown > 0) cooldown -= 0;
-
-            Vector2 ang = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z) - transform.position;
-
-            float angle = Mathf.Atan2(ang.y, ang.x) * 180 / Mathf.PI;
-
-            transform.rotation = Quaternion.Euler(0f, 0f, angle);
-
-            GetComponent<Rigidbody2D>().velocity = moveSpeed * GetTarget();
-
-            if (directionAngle != null && isenabled && cooldown == 0)
-            {
-                double radians = ((float)directionAngle + angle) * Mathf.PI / 180;
-                double x = Mathf.Cos((float)radians);
-                double y = Mathf.Sin((float)radians);
-
-                Vector2 v = new Vector2((float)x, (float)y) * 20;
-                player.GetComponent<Rigidbody2D>().velocity = v;
-
-                cooldown = cooldownLength;
-
-                isenabled = false;
-            }
-
-            if (directionAngle != null) directionAngle = null;
-
-            if (enables == 1)
-            {
-                isenabled = true;
-            }
-
+            isenabled = false;
         }
 
-        if (Input.GetMouseButton(0) && ( throwing == false && followPlayer == true ))
+        if (directionAngle != null) directionAngle = null;
+
+        if (enables == 1)
         {
-
-
-
-            print(transform.rotation.z);
-
-            float angle = transform.rotation.eulerAngles.z * Mathf.PI / 180;
-            angle += Mathf.PI;
-
-            throwVelocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-            throwVelocity *= 5;
-
-
-
-            throwing = true;
-            followPlayer = false;
-
-            StartCoroutine(makeCopy());
-
-
+            isenabled = true;
         }
 
 

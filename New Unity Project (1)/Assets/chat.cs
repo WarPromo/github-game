@@ -13,6 +13,8 @@ public class chat : MonoBehaviour
 
     public string[] texts;
     public bool finishedTalking = false;
+    public int finishedTalkingAgo = 2;
+
     public float zoomAmount;
     int n = 0;
     
@@ -25,17 +27,21 @@ public class chat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        finishedTalkingAgo = finishedTalkingAgo + 1;   
     }
 
     public void interact()
     {
 
+
+
         n++;
 
         if(n % texts.Length == 0)
         {
+            print("true");
             finishedTalking = true;
+            finishedTalkingAgo = 0;
         }
 
         textObject.GetComponent<Text>().text = texts[n % texts.Length].Replace("/n", System.Environment.NewLine);
