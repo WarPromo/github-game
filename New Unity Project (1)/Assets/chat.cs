@@ -31,6 +31,7 @@ public class chat : MonoBehaviour
         if(n % texts.Length == 0) textObject.GetComponent<Text>().text = texts[n % texts.Length].Replace("/n", System.Environment.NewLine);
     }
 
+
     public void interact()
     {
 
