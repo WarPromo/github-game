@@ -2456,7 +2456,7 @@ GameObject:
   m_IsActive: 1
 --- !u!82 &519420029
 AudioSource:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2553,7 +2553,7 @@ AudioSource:
 --- !u!50 &519420030
 Rigidbody2D:
   serializedVersion: 4
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2573,7 +2573,7 @@ Rigidbody2D:
   m_Constraints: 0
 --- !u!20 &519420031
 Camera:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2631,7 +2631,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2646,7 +2646,7 @@ MonoBehaviour:
   scrollSpeed: 5.8
 --- !u!114 &519420034
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2678,7 +2678,7 @@ MonoBehaviour:
   m_Version: 2
 --- !u!81 &519420035
 AudioListener:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5397,6 +5397,7 @@ MonoBehaviour:
   focus: {fileID: 0}
   mySword: {fileID: 0}
   zoom: 0
+  airdashSpeed: 13
 --- !u!61 &1242278547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5478,7 +5479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 1.501, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.14, y: 27.357752}
+  m_AnchoredPosition: {x: 21.28, y: 44.89}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1260812355
@@ -6595,7 +6596,7 @@ GameObject:
   m_IsActive: 1
 --- !u!61 &1572477162
 BoxCollider2D:
-  m_ObjectHideFlags: 8
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6621,7 +6622,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!212 &1572477163
 SpriteRenderer:
-  m_ObjectHideFlags: 8
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7786,7 +7787,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1861649720
 SpriteRenderer:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

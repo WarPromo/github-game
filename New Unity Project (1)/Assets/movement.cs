@@ -18,6 +18,10 @@ public class movement : MonoBehaviour
     public GameObject mySword;
 
     public float zoom;
+
+    public float airdashSpeed;
+
+    int airdashes = 0;
     
 
     void Start()
@@ -72,6 +76,27 @@ public class movement : MonoBehaviour
 
         GetComponent<Rigidbody2D>().velocity = newVelocity;
 
+        if (canmove)
+        {
+            if (airdashes > 0 && Input.GetMouseButton(1))
+            {
+                Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+
+                Vector3 dL = worldPosition - transform.position;
+                Vector2 v2 = new Vector2(dL.x, dL.y);
+
+                v2 = v2.normalized;
+                v2 *= airdashSpeed;
+
+                GetComponent<Rigidbody2D>().velocity = v2;
+
+                airdashes--;
+
+
+            }
+        }
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -87,6 +112,7 @@ public class movement : MonoBehaviour
         if (collision.gameObject.tag == "ground")
         {
             canjump = false;
+            airdashes = 1;
         }
     }
 }
