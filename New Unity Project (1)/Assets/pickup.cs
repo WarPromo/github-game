@@ -19,42 +19,33 @@ public class pickup : MonoBehaviour
     void Update()
     {
 
-        if (pickedUp)
+
+        if(picked != null)
         {
-            Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
-
-            Vector3 loc = transform.position + ((worldPosition - transform.position).normalized) * d;
-            Vector3 dV = loc - picked.transform.position;
-
-            picked.GetComponent<Rigidbody2D>().velocity = dV * 5;
-
-            
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), picked.GetComponent<Collider2D>());
+            picked.transform.position = transform.position;
         }
-        else
-        {
-            picked = null;
-        }
+
+
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(pickedUp == false)
+
+
+
+
+            if(picked != null)
             {
                 Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
 
-                Collider2D overlaps = Physics2D.OverlapPoint(worldPosition);
+                Vector3 loc = worldPosition - picked.transform.position;
+                loc = loc.normalized;
+                picked.transform.position = GetComponent<movement>().mySword.transform.position;
+                picked.GetComponent<Rigidbody2D>().velocity = loc * 5;
+                picked = null;
 
-                if (overlaps != null && overlaps.gameObject.tag == "throwable")
-                {
-                    pickedUp = true;
-                    picked = overlaps.gameObject;
-                    d = (transform.position - worldPosition).magnitude;
-                }
-            }
-            else
-            {
-                pickedUp = false;
+
             }
 
 
