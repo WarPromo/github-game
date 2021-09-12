@@ -54,13 +54,8 @@ public class pickup : MonoBehaviour
 
                 Physics2D.IgnoreCollision(GetComponent<Collider2D>(), picked.GetComponent<Collider2D>(), false);
 
-                Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
-
-                Vector3 loc = worldPosition - picked.transform.position;
-                loc = loc.normalized;
                 //picked.transform.position = GetComponent<movement>().mySword.transform.position;
-                picked.GetComponent<Rigidbody2D>().velocity = loc * -25;
+                picked.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * 10;
                 picked = null;
 
 
