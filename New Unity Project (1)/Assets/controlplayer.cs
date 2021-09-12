@@ -104,7 +104,7 @@ public class controlplayer : MonoBehaviour
     {
  
         Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+        Vector2 worldPosition = player.GetComponent<movement>().mainCamera.ScreenToWorldPoint(screenPosition);
 
         lastMousePos = currentMousePos;
         currentMousePos = worldPosition;

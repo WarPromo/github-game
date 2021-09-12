@@ -16,6 +16,7 @@ public class movement : MonoBehaviour
 
     public GameObject focus;
     public GameObject mySword;
+    public Camera mainCamera;
 
     public float zoom;
 
@@ -28,6 +29,7 @@ public class movement : MonoBehaviour
     {
         focus = gameObject;
         zoom = 6;
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -35,12 +37,12 @@ public class movement : MonoBehaviour
     {
 
 
-        Vector2 cameraDist = -Camera.main.transform.position + focus.transform.position;
-        Vector2 cvelocity = Camera.main.GetComponent<Rigidbody2D>().velocity;
+        Vector2 cameraDist = -mainCamera.transform.position + focus.transform.position;
+        Vector2 cvelocity = mainCamera.GetComponent<Rigidbody2D>().velocity;
         Vector2 cvelocity2 = cvelocity;
 
-        Camera.main.GetComponent<Rigidbody2D>().velocity = cameraDist * 10;
-        Camera.main.orthographicSize = Mathf.MoveTowards(Camera.main.orthographicSize, zoom, Time.deltaTime);
+        mainCamera.GetComponent<Rigidbody2D>().velocity = cameraDist * 10;
+        mainCamera.orthographicSize = Mathf.MoveTowards(mainCamera.orthographicSize, zoom, Time.deltaTime);
 
 
         Vector2 v = new Vector2(0, 0);
@@ -81,7 +83,10 @@ public class movement : MonoBehaviour
             if (airdashes > 0 && Input.GetMouseButton(1))
             {
                 Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+
+                print(mainCamera);
+
+                Vector3 worldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
 
                 Vector3 dL = worldPosition - transform.position;
                 Vector2 v2 = new Vector2(dL.x, dL.y);

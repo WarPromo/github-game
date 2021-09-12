@@ -38,7 +38,10 @@ public class talk : MonoBehaviour
             else
             {
                 Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+
+               
+
+                Vector3 worldPosition = GetComponent<movement>().mainCamera.ScreenToWorldPoint(screenPosition);
 
                 List<Collider2D> overlaps = new List<Collider2D>();
                 ContactFilter2D filter = new ContactFilter2D();

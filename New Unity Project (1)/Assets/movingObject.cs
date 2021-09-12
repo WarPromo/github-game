@@ -23,15 +23,24 @@ public class movingObject : MonoBehaviour
     void Update()
     {
         Vector2 v2T = new Vector2(transform.position.x, transform.position.y);
-        Vector2 future = new Vector2(transform.position.x, transform.position.y) + move;
-        Vector2 fD = future - goTowards;
-        Vector2 nD = v2T - goTowards;
+        Vector2 future = new Vector2(transform.position.x, transform.position.y) + move*Time.deltaTime;
+        Vector2 fD = goTowards - future;
+        Vector2 nD = goTowards - v2T;
 
 
-        if( (fD.x >= 0 && nD.x <= 0) || (fD.x <= 0 && nD.x >= 0))
+        if( (fD.x > 0 && nD.x < 0) || (fD.x < 0 && nD.x > 0))
         {
-            if (goTowards == point1) goTowards = point2;
-            else goTowards = point1;
+
+            if (goTowards == point1)
+            {
+                goTowards = point2;
+                transform.position = point1;
+            }
+            else
+            {
+                goTowards = point1;
+                transform.position = point2;
+            }
         }
 
 
