@@ -40,6 +40,6 @@ public class movingObject : MonoBehaviour
         move = (goTowards - v2T);
         move = move.normalized * speed;
 
-        GetComponent<Rigidbody2D>().velocity = move;
+        transform.Translate(move);
     }
 }
