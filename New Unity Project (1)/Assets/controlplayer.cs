@@ -58,6 +58,11 @@ public class controlplayer : MonoBehaviour
             double y = Mathf.Sin((float)radians);
 
             Vector2 v = new Vector2((float)x, (float)y) * 20;
+
+            v.x *= 2;
+
+
+
             player.GetComponent<Rigidbody2D>().velocity = v;
 
             cooldown = cooldownLength;
