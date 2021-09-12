@@ -28,7 +28,7 @@ public class movement : MonoBehaviour
     void Start()
     {
         focus = gameObject;
-        zoom = 6;
+        zoom = Camera.main.orthographicSize;
         mainCamera = Camera.main;
     }
 

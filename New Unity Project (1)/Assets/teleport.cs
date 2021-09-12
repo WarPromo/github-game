@@ -44,6 +44,7 @@ public class teleport : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Camera current = p.GetComponent<movement>().mainCamera;
         c.gameObject.SetActive(true);
+        p.GetComponent<movement>().zoom = c.orthographicSize;
         p.GetComponent<movement>().mainCamera = c;
         current.gameObject.SetActive(false);
 
