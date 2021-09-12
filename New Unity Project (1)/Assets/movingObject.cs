@@ -27,7 +27,6 @@ public class movingObject : MonoBehaviour
         Vector2 fD = future - goTowards;
         Vector2 nD = v2T - goTowards;
 
-        print(goTowards);
 
         if( (fD.x >= 0 && nD.x <= 0) || (fD.x <= 0 && nD.x >= 0))
         {
@@ -40,6 +39,6 @@ public class movingObject : MonoBehaviour
         move = (goTowards - v2T);
         move = move.normalized * speed;
 
-        transform.Translate(move);
+        transform.Translate(move * Time.deltaTime);
     }
 }
