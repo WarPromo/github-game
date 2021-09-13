@@ -23,6 +23,7 @@ public class teleport : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && canteleport)
         {
+           
             StartCoroutine(teleportDelay());
             canteleport = false;
         }
