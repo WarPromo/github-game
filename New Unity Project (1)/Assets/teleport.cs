@@ -57,7 +57,7 @@ public class teleport : MonoBehaviour
     {
 
         if (teleporting == true) return;
-        print("calling");
+
         if(collision.gameObject.tag == "Player")
         {
             canteleport = true;
@@ -77,7 +77,7 @@ public class teleport : MonoBehaviour
     {
 
         if (teleporting == true) return;
-        print("calling");
+
         if (collision.gameObject.tag == "Player")
         {
             canteleport = false;
