@@ -72,6 +72,12 @@ public class controlplayer : MonoBehaviour
 
         if (directionAngle != null) directionAngle = null;
 
+        print(enables);
+
+        if (enables == -1) enables = 0;
+
+        if (enables > 1) enables = 1;
+
         if (enables == 1)
         {
             isenabled = true;
