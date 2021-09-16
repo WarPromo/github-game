@@ -29,11 +29,11 @@ public class pickup : MonoBehaviour
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), picked.GetComponent<Collider2D>());
             float z = picked.transform.position.z;
 
-            print("my position is: " + transform.position);
+
 
             picked.transform.position = new Vector2(transform.position.x, transform.position.y + 2);
 
-            print("thieer position is: " + picked.transform.position + " " + picked.gameObject.name);
+
 
         }
         else

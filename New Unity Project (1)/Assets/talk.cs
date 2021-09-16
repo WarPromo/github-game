@@ -52,7 +52,7 @@ public class talk : MonoBehaviour
 
                 foreach(Collider2D overlap in overlaps)
                 {
-                    print(overlap);
+
 
                     if (overlaps != null && overlap.gameObject.tag == "talker")
                     {

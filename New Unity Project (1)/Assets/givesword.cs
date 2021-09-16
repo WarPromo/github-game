@@ -25,7 +25,7 @@ public class givesword : MonoBehaviour
 
         if (GetComponent<chat>().finishedTalkingAgo == 0 || GetComponent<chat>().finishedTalkingAgo == 1)
         {
-            print("finished");
+
             audiosource.Play(0);
             gaveSword = true;
         }

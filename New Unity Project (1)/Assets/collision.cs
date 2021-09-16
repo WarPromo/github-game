@@ -30,7 +30,7 @@ public class collision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("TRIGGER! " + collision.gameObject.name);
+
 
         if (collision.gameObject.GetComponent<nocollide>() != null) return;
         if (collision.gameObject == pickedup) return;
@@ -48,7 +48,7 @@ public class collision : MonoBehaviour
             return;
         }
 
-        print("EXITED TRIGGER! " + collision.gameObject.name);
+
         parent.GetComponent<controlplayer>().enables += 1;
 
     }

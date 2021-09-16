@@ -20,7 +20,7 @@ public class chat : MonoBehaviour
     
     void Start()
     {
-        print(transform.gameObject.name);
+
         textObject = transform.GetChild(0).GetChild(0).gameObject;
         textObject.GetComponent<Text>().text = texts[n % texts.Length];
     }
@@ -42,7 +42,7 @@ public class chat : MonoBehaviour
 
         if(n % texts.Length == 0)
         {
-            print("true");
+
             finishedTalking = true;
             finishedTalkingAgo = 0;
         }

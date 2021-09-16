@@ -60,7 +60,6 @@ public class movement : MonoBehaviour
             }
             if (canjump && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)))
             {
-                print("Jumped");
                 newVelocity.y = jumpheight;
             }
         }
@@ -83,8 +82,6 @@ public class movement : MonoBehaviour
             if (airdashes > 0 && Input.GetMouseButton(1))
             {
                 Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
-                print(mainCamera);
 
                 Vector3 worldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
 
