@@ -1120,7 +1120,7 @@ MonoBehaviour:
   - IT'S NICE TO SEE SOMEONE ELSE UP HERE...
   - THERE IS SOMETHING YOU SHOULD KNOW.
   - ABOVE HERE, THE GRAVITY IS /nSUBSTANTIALLY LOWER.
-  - HERE, I CAN GIVE YOU THIS HAT TO MAKE /nIT EASIER FOR YOU TO SURVIVE.
+  - HERE, I CAN GIVE YOU THIS HAT, IT'LL MAKE IT /nIT EASIER FOR YOU TO SURVIVE.
   finishedTalking: 0
   finishedTalkingAgo: 2
   zoomAmount: 4
@@ -10038,7 +10038,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 34a3fcd1b32943946bf6188f8b340a45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfe288f567266c54e814a8edadfc4e05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
