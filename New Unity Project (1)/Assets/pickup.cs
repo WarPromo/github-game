@@ -33,6 +33,8 @@ public class pickup : MonoBehaviour
 
             picked.transform.position = new Vector2(transform.position.x, transform.position.y + 2);
 
+            print("teleporting it " + picked);
+
 
 
         }
@@ -52,13 +54,24 @@ public class pickup : MonoBehaviour
             if(nullCounter > 5)
             {
 
+
+                print("THROW");
+
                 Physics2D.IgnoreCollision(GetComponent<Collider2D>(), picked.GetComponent<Collider2D>(), false);
 
                 //picked.transform.position = GetComponent<movement>().mySword.transform.position;
                 picked.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * 10;
+                picked.GetComponent<pickable>().setThrowable();
+
+                print("Has been thrown.");
+
                 picked = null;
 
 
+            }
+            else
+            {
+                print("NULL LESS THAN 0");
             }
 
 
