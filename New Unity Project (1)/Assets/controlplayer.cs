@@ -10,6 +10,8 @@ public class controlplayer : MonoBehaviour
     Vector2 lastMousePos = new Vector2(0, 0);
     Vector2 currentMousePos = new Vector2(0, 0);
 
+    AudioSource audio;
+
     public float maxSwingD;
 
     public int cooldownLength;
@@ -34,6 +36,7 @@ public class controlplayer : MonoBehaviour
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         //Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), player.GetComponent<Collider2D>());
     }
 
@@ -53,6 +56,9 @@ public class controlplayer : MonoBehaviour
 
         if (directionAngle != null && isenabled && cooldown == 0)
         {
+
+            audio.Play();
+
             double radians = ((float)directionAngle + angle) * Mathf.PI / 180;
             double x = Mathf.Cos((float)radians);
             double y = Mathf.Sin((float)radians);
