@@ -24,7 +24,7 @@ public class button : MonoBehaviour
         if (pressing)
         {
             notPressed = 0;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1500f * Time.deltaTime);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1);
         }
         else
         {
@@ -33,9 +33,9 @@ public class button : MonoBehaviour
 
         if(notPressed > 0.3f && startPos.y > transform.position.y)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2000f * Time.deltaTime);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2);
         }
-        else if (notPressed > 0.3f)
+        else if (notPressed > 0.1f)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
