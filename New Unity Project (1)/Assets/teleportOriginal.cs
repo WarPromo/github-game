@@ -39,6 +39,10 @@ public class teleportOriginal : MonoBehaviour
         {
             dropItem();
             theobject.transform.position = originalPos;
+            if (theobject.TryGetComponent(out Rigidbody2D rb))
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
     }
 
