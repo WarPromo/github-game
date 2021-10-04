@@ -8,7 +8,7 @@ public class button : MonoBehaviour
 
     public bool buttonPressed = false;
     bool pressing = false;
-    float notPressed = 0;
+    public float pressed = 0;
     Vector2 startPos;
 
 
@@ -21,47 +21,13 @@ public class button : MonoBehaviour
     void Update()
     {
 
-        if (pressing)
-        {
-            notPressed = 0;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1);
-        }
-        else
-        {
-            notPressed+=Time.deltaTime;
-        }
-
-        if(notPressed > 0.3f && startPos.y > transform.position.y)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2);
-        }
-        else if (notPressed > 0.1f)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "buttonactivator")
+        if(collision.gameObject.tag == "Player")
         {
             buttonPressed = true;
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            pressing = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            pressing = false;
         }
     }
 

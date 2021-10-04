@@ -28,7 +28,7 @@ public class movingObject : MonoBehaviour
         Vector2 nD = goTowards - v2T;
 
 
-        if( (fD.x > 0 && nD.x < 0) || (fD.x < 0 && nD.x > 0))
+        if( (fD.x >= 0 && nD.x <= 0) || (fD.x <= 0 && nD.x >= 0))
         {
 
             if (goTowards == point1)

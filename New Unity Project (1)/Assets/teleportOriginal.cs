@@ -25,11 +25,14 @@ public class teleportOriginal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject == theobject)
+        if (collision.gameObject == theobject)
         {
             dropItem();
             theobject.transform.position = originalPos;
-
+            if (theobject.TryGetComponent(out Rigidbody2D rb))
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
     }
 
