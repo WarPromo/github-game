@@ -18,23 +18,28 @@ public class dreammusic : MonoBehaviour
     void Update()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if(player.GetComponent<pickup>().picked == gameObject)
+        if (player.GetComponent<pickup>().picked == gameObject)
         {
             picktime++;
         }
-        else
-        {
-            picktime = 0;
-        }
 
-        if(picktime == 1)
+        if (picktime == 1)
         {
             print("playing dweem speedrunner song");
             dream.Play(100);
         }
-        if(picktime == 0)
+
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if( collision.TryGetComponent( out teleportOriginal script))
         {
-            dream.Stop();
+            if(script.theobject == gameObject)
+            {
+                dream.Stop();
+                picktime = 0;
+            }
         }
     }
 }

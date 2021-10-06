@@ -10,6 +10,7 @@ public class teleportOriginal : MonoBehaviour
     Vector3 originalPos;
     GameObject player;
 
+
     // Start is called before the first frame update
     void Start()
     {
