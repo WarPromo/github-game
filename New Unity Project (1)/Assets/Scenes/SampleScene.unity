@@ -1120,7 +1120,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 30
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -1129,15 +1129,6 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.8363075
-      inSlope: 0.045422625
-      outSlope: 0.045422625
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.75658596
     - serializedVersion: 3
       time: 0.31999817
       value: 0.82408905
@@ -1148,23 +1139,14 @@ AudioSource:
       inWeight: 0.3973354
       outWeight: 0.1688936
     - serializedVersion: 3
-      time: 0.40752786
-      value: 0.39515883
-      inSlope: -3.5604599
-      outSlope: -3.5604599
+      time: 0.6475181
+      value: 0.53059584
+      inSlope: -1.4328367
+      outSlope: -1.4328367
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.6888855
-      value: 0.030700684
-      inSlope: -0.12180958
-      outSlope: -0.12180958
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.6826331
-      outWeight: 0.6762269
+      outWeight: 0.6611953
     - serializedVersion: 3
       time: 0.99554443
       value: 0
@@ -8959,6 +8941,78 @@ PolygonCollider2D:
       - {x: 0.11491008, y: -0.09825391}
       - {x: 0.14560156, y: 0.0009062551}
       - {x: 0.13029686, y: 0.02219138}
+--- !u!1 &389213192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389213194}
+  - component: {fileID: 389213193}
+  m_Layer: 0
+  m_Name: Point Light 2D (37)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &389213193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389213192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 0
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0, g: 0.97259355, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 30
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 0.4
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &389213194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389213192}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 244.78, y: 111.04, z: 0}
+  m_LocalScale: {x: 4.9517, y: 4.9517, z: 4.9517}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 249
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &395155278
 GameObject:
   m_ObjectHideFlags: 0
@@ -16083,7 +16137,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f9cefd855ebd1ab429e54fd30defe8a0, type: 3}
-  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -26093,7 +26147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 1.501, y: -0.031, z: -1.2}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 82.3, y: 233.1}
+  m_AnchoredPosition: {x: 61.5, y: 358.7}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1242278552
