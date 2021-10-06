@@ -1109,7 +1109,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1a86ae79a6df27146bc03b1767cb68d9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5fb9c4c06ba94e5479efbeaa362c201f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -16964,7 +16964,8 @@ MonoBehaviour:
   - thee
   - uhh
   - nationaal sleeeeeeepnig  assssociatonjfle;sle-------......
-  - zzzzzzzzzzzzzzzz............
+  - zzzzzzzzzzzzzzzz............ (ddoont click E twice the dialogue is about to end
+    you absolute dumbass)
   finishedTalking: 0
   finishedTalkingAgo: 2
   zoomAmount: 5
@@ -24673,7 +24674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 1.501, y: -0.031, z: -1.2}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 72.9, y: 332.17}
+  m_AnchoredPosition: {x: 87, y: 238.4}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1242278552
@@ -40259,7 +40260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - '!'
-  - hi
+  - Hello!
   - Good luck on whatever you are doing!
   - Hmm... /nYou seem to be weaponless...
   - Take this sword, /nand ascend to the heavens!
