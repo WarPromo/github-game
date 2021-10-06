@@ -44,7 +44,7 @@ public class controlplayer : MonoBehaviour
     void Update()
     {
 
-        if (cooldown > 0) cooldown -= 0;
+        if (cooldown > 0) cooldown -= 1;
 
         Vector2 ang = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z) - transform.position;
 

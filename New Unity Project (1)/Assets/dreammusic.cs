@@ -28,6 +28,10 @@ public class dreammusic : MonoBehaviour
             print("playing dweem speedrunner song");
             dream.Play(100);
         }
+        if(player.GetComponent<movement>().mainCamera != null && player.GetComponent<movement>().mainCamera != Camera.main)
+        {
+            dream.Stop();
+        }
 
     }
 
