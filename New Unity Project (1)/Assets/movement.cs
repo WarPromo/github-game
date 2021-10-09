@@ -17,6 +17,8 @@ public class movement : MonoBehaviour
     public GameObject focus;
     public GameObject mySword;
     public Camera mainCamera;
+    public float cameraSpeed;
+    public float zoomSpeed;
 
     public float zoom;
 
@@ -41,8 +43,8 @@ public class movement : MonoBehaviour
         Vector2 cvelocity = mainCamera.GetComponent<Rigidbody2D>().velocity;
         Vector2 cvelocity2 = cvelocity;
 
-        mainCamera.GetComponent<Rigidbody2D>().velocity = cameraDist * 10;
-        mainCamera.orthographicSize = Mathf.MoveTowards(mainCamera.orthographicSize, zoom, Time.deltaTime);
+        mainCamera.GetComponent<Rigidbody2D>().velocity = cameraDist * cameraSpeed;
+        mainCamera.orthographicSize = Mathf.MoveTowards(mainCamera.orthographicSize, zoom, Time.deltaTime*zoomSpeed);
 
 
         Vector2 v = new Vector2(0, 0);
