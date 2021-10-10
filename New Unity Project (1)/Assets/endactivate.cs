@@ -23,7 +23,11 @@ public class endactivate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(GameObject.FindGameObjectWithTag("Player").GetComponent<movement>().mainCamera.gameObject.name == "Level 2 Teleport" && !endMusic.isPlaying)
+        {
+            print("PLAY END MUSIC");
+            endMusic.Play();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,7 +38,7 @@ public class endactivate : MonoBehaviour
             Vector3 pos = border.transform.position;
             pos.y = yValue;
             border.transform.position = pos;
-            endMusic.Play();
+            endMusic.volume = 0.2f;
             ended = true;
             movement m = p.GetComponent<movement>();
             m.focus = endfocus;
