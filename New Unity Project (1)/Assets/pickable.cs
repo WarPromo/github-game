@@ -6,6 +6,7 @@ public class pickable : MonoBehaviour
 {
     // Start is called before the first frame update
     int throwable = 0;
+    public string id;
 
 
     void Start()

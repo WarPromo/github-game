@@ -1,1 +1,1 @@
-glutenberg
+playerPosition:34.90652 165.7099 -1.37|currentlyPicked:Orb 34.90652 167.7099 0|hasSword:true

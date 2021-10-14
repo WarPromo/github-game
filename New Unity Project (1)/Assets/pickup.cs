@@ -33,8 +33,6 @@ public class pickup : MonoBehaviour
 
             picked.transform.position = new Vector2(transform.position.x, transform.position.y + 2);
 
-            print("teleporting it " + picked);
-
 
 
         }

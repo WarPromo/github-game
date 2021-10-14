@@ -14891,6 +14891,7 @@ GameObject:
   - component: {fileID: 441044446}
   - component: {fileID: 441044445}
   - component: {fileID: 441044444}
+  - component: {fileID: 441044453}
   m_Layer: 0
   m_Name: the playerr
   m_TagString: Player
@@ -14916,7 +14917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 1.501, y: -0.031, z: -1.2}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.5, y: 360.3}
+  m_AnchoredPosition: {x: 86.92, y: 332.51}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &441044444
@@ -15101,6 +15102,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &441044453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441044442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced2263d857d23c47b9030782df47104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &445382325
 GameObject:
   m_ObjectHideFlags: 0
@@ -35745,6 +35758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8a366ff1dbeeb4f90232d24ed5e6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
 --- !u!50 &1097747317
 Rigidbody2D:
   serializedVersion: 4
@@ -37572,6 +37586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8a366ff1dbeeb4f90232d24ed5e6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
 --- !u!50 &1148114288
 Rigidbody2D:
   serializedVersion: 4
@@ -38285,7 +38300,7 @@ GameObject:
   - component: {fileID: 1165008277}
   m_Layer: 0
   m_Name: Monkey
-  m_TagString: Untagged
+  m_TagString: throwable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38350,6 +38365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8a366ff1dbeeb4f90232d24ed5e6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: Monkey
 --- !u!50 &1165008280
 Rigidbody2D:
   serializedVersion: 4
@@ -39169,6 +39185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8a366ff1dbeeb4f90232d24ed5e6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: Speedrun Cube
 --- !u!50 &1177046487
 Rigidbody2D:
   serializedVersion: 4
@@ -41551,6 +41568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8a366ff1dbeeb4f90232d24ed5e6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: Pillow
 --- !u!50 &1246353931
 Rigidbody2D:
   serializedVersion: 4
@@ -49220,6 +49238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8a366ff1dbeeb4f90232d24ed5e6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: Orb
 --- !u!50 &1499622831
 Rigidbody2D:
   serializedVersion: 4
