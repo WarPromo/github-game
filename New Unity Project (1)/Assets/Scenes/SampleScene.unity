@@ -37957,12 +37957,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - '!'
-  - heya
-  - take this green square to the top
-  - this button resets the position of the/nmoving green
-  - you need to do some tricks to beat this section
-  - like bouncing off an item you threw/n and picking it back up right after
-  - fix the dialogue roee
+  - Ay
+  - Im Perry The Platapus
+  - Take this Green Square to the Top
+  - This Red Button over here
+  - It restarts the speedrun
+  - You gotta do some tricks if you wanna beat this
+  - Try throwing an item, bouncing off of it\n Then picking it up right after
   finishedTalking: 0
   finishedTalkingAgo: 2
   zoomAmount: 4
@@ -53053,11 +53054,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - '!'
-  - '''Ello, chap!'
+  - '''Ello, chap'
   - Have you seen any monkeys around?
   - I lost mine a few seconds ago...
   - Anyhow, if you find 'em then good on ya mate, /nthey may be able to help you
-    out later!
+    out later
   - Good ol pet, yea?
   finishedTalking: 0
   finishedTalkingAgo: 2
