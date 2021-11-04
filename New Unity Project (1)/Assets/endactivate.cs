@@ -41,6 +41,7 @@ public class endactivate : MonoBehaviour
             endMusic.volume = 0.2f;
             ended = true;
             movement m = p.GetComponent<movement>();
+            p.GetComponent<savenload>().gameEnded = true;
             m.focus = endfocus;
             m.zoom = zoomout;
             m.cameraSpeed = 0.3f;

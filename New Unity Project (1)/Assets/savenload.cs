@@ -7,21 +7,35 @@ public class savenload : MonoBehaviour
 {
     // Start is called before the first frame update
     int t = 1;
-    public 
+    public bool gameEnded = false;
 
 
     void Start()
     {
+
         loadSaveFile();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         t++;
-        if(t % 100 == 0) saveData();
+        if (t % 100 == 0)
+        {
+            if (gameEnded)
+            {
+                writeRandomShit();
+                return;
+            }
+            saveData();
+        }
     }
 
+    public void writeRandomShit()
+    {
+        File.WriteAllText(Directory.GetCurrentDirectory() + "/bruh.txt", "game ended");
+    }
 
     public void loadSaveFile()
     {
