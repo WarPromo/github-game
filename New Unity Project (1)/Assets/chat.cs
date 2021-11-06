@@ -16,7 +16,7 @@ public class chat : MonoBehaviour
     public int finishedTalkingAgo = 2;
 
     public float zoomAmount;
-    int n = 0;
+    public int n = 0;
     
     void Start()
     {

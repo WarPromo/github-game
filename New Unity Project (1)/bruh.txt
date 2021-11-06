@@ -1,1 +1,1 @@
-playerPosition:-5.34 -4.335184 -1.37|currentlyPicked:null|hasSword:false
+playerPosition:95.18645 221.6293 -1.37|currentlyPicked:null|hasSword:true
